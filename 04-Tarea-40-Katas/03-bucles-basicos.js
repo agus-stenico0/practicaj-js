@@ -11,8 +11,18 @@
 -------------------------------------------------------------------------- */
 function numerosHastaN(n) {
   // TU CÓDIGO AQUÍ 👇
+  if (n <= 0) return [];
+
+  let resultado = [];
+
+  for (let i = 1; i <= n; i++) {
+    resultado.push(i);
+  }
+
+  return resultado;
 }
 
+numerosHastaN(8)
 /* --------------------------------------------------------------------------
    KATA 22 — Cuenta Regresiva
    Dado un número de inicio, retorná un array con la cuenta regresiva
@@ -21,8 +31,17 @@ function numerosHastaN(n) {
 -------------------------------------------------------------------------- */
 function cuentaRegresiva(inicio) {
   // TU CÓDIGO AQUÍ 👇
-}
 
+  let despegue = []
+
+  for(let i = inicio; i >= 0; i--) {
+    despegue.push(i)
+  }
+
+  despegue.push("¡Despegue! 🚀");
+  return despegue
+}
+cuentaRegresiva(3)
 /* --------------------------------------------------------------------------
    KATA 23 — Tabla de Multiplicar
    Dado un número, retorná un array con los 10 primeros múltiplos en formato string.
@@ -30,8 +49,15 @@ function cuentaRegresiva(inicio) {
 -------------------------------------------------------------------------- */
 function tablaMultiplicar(numero) {
   // TU CÓDIGO AQUÍ 👇
-}
+  let tabla = []
+  for(let i = 1; i <= 10; i++) {
+    let calculo = numero * i;
+    tabla.push(numero + ' x ' + i + ' = ' + calculo)
+  }
 
+  return tabla
+}
+tablaMultiplicar(7)
 /* --------------------------------------------------------------------------
    KATA 24 — Factorial
    Dado un número n, calculá y retorná su factorial.
@@ -39,9 +65,15 @@ function tablaMultiplicar(numero) {
    Definí factorial(0) = 1.
 -------------------------------------------------------------------------- */
 function factorial(n) {
-  // TU CÓDIGO AQUÍ 👇
-}
+  let resolucion = 1;
 
+  for (let i = n; i >= 1; i--) {
+    resolucion = resolucion * i;
+  }
+
+  return resolucion;
+}
+factorial(5)
 /* --------------------------------------------------------------------------
    KATA 25 — Sin Múltiplos de 4
    Dado un límite, retorná un array con los números del 1 al límite
@@ -50,8 +82,18 @@ function factorial(n) {
 -------------------------------------------------------------------------- */
 function sinMultiplosDe4(limite) {
   // TU CÓDIGO AQUÍ 👇
-}
 
+  let numeros = []
+
+  for( let i = 1; i <= limite; i++) {
+    if(i % 4 !== 0) {
+      numeros.push(i)
+    }
+  }
+
+  return numeros
+}
+sinMultiplosDe4(8)
 /* --------------------------------------------------------------------------
    KATA 26 — Primer Múltiplo de 13 Mayor a 100
    Retorná el primer número que sea múltiplo de 13 y sea estrictamente mayor que 100.
@@ -59,8 +101,16 @@ function sinMultiplosDe4(limite) {
 -------------------------------------------------------------------------- */
 function primerMultiploDe13MayorA100() {
   // TU CÓDIGO AQUÍ 👇
-}
 
+  for(let num = 101; num >= 100; num++) {
+    if(num % 13 === 0) {
+      return num
+    }
+  }
+
+  return num
+}
+primerMultiploDe13MayorA100()
 /* --------------------------------------------------------------------------
    KATA 27 — Triángulo de Asteriscos
    Dado un número de filas, retorná un array donde cada elemento es una fila.
@@ -68,17 +118,36 @@ function primerMultiploDe13MayorA100() {
 -------------------------------------------------------------------------- */
 function triangulo(filas) {
   // TU CÓDIGO AQUÍ 👇
-}
+  let array = []
+  for(let i = 1; i <= filas; i++) {
+    let fila = "";             
+    for (let j = 1; j <= i; j++) {
+      fila += "*";             
+    }
+    array.push(fila);          
+  }
 
-/* --------------------------------------------------------------------------
+  return array
+}
+triangulo(20)
+/* -------------------------------------------------------------------------
    KATA 28 — Suma del 1 al N
    Dado un número n, retorná la suma de todos los números del 1 al n.
    Ej: sumaHastaN(10) → 55
 -------------------------------------------------------------------------- */
-function sumaHastaN(n) {
-  // TU CÓDIGO AQUÍ 👇
-}
+function sumaHastaN(n) {            
 
+  let suma = 0
+  let resultado = 0
+
+  for (let i = 1; i <= n; i++) {
+    suma = suma + i 
+    resultado = suma
+  }
+  
+  return resultado
+}
+sumaHastaN(10)
 /* --------------------------------------------------------------------------
    KATA 29 — Fibonacci
    Dado un número n, retorná un array con los primeros n números
@@ -86,9 +155,19 @@ function sumaHastaN(n) {
    Ej: fibonacci(6) → [0, 1, 1, 2, 3, 5]
 -------------------------------------------------------------------------- */
 function fibonacci(n) {
-  // TU CÓDIGO AQUÍ 👇
-}
+  if (n <= 0) return [];
 
+  if (n === 1) return [0];
+
+  let resultado = [0, 1];
+
+  for (let i = 2; i < n; i++) {
+    resultado.push(resultado[i - 1] + resultado[i - 2]);
+  }
+
+  return resultado;
+}
+fibonacci(6)
 /* --------------------------------------------------------------------------
    KATA 30 — ¿Es Primo?
    Dado un número, retorná true si es primo o false si no lo es.
@@ -97,8 +176,16 @@ function fibonacci(n) {
 -------------------------------------------------------------------------- */
 function esPrimo(numero) {
   // TU CÓDIGO AQUÍ 👇
-}
 
+  if (numero <= 1) return false;
+
+  for (let i = 2; i <= Math.sqrt(numero); i++) {
+    if (numero % i === 0) return false;
+  }
+
+  return true;
+}
+esPrimo(100)
 // 🚨 ¡NO TOCAR ESTA LÍNEA!
 module.exports = {
   numerosHastaN,

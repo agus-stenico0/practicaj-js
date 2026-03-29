@@ -10,16 +10,25 @@
 -------------------------------------------------------------------------- */
 function sumar(a, b) {
   // TU CÓDIGO AQUÍ 👇
-}
 
+  let suma = a + b;
+
+  return suma;
+}
+sumar(9, 9)
 /* --------------------------------------------------------------------------
    KATA 2 — La Resta
    Recibís dos números. Réstalos (a - b) y retorná el resultado.
 -------------------------------------------------------------------------- */
 function restar(a, b) {
   // TU CÓDIGO AQUÍ 👇
-}
 
+  let resta = a - b;
+
+  return resta;
+
+}
+restar(9, 7)
 /* --------------------------------------------------------------------------
    KATA 3 — Concatenación de Nombre
    Recibís un nombre y un apellido. Unilos con un espacio en el medio.
@@ -27,8 +36,12 @@ function restar(a, b) {
 -------------------------------------------------------------------------- */
 function unirNombre(nombre, apellido) {
   // TU CÓDIGO AQUÍ 👇
-}
 
+  let nombreCompleto = nombre + ' ' + apellido;
+
+  return nombreCompleto;
+}
+unirNombre('Agustin', 'Stenico')
 /* --------------------------------------------------------------------------
    KATA 4 — Saludo con Template Literal
    Recibís un nombre y una edad. Retorná el string:
@@ -36,16 +49,22 @@ function unirNombre(nombre, apellido) {
 -------------------------------------------------------------------------- */
 function crearSaludo(nombre, edad) {
   // TU CÓDIGO AQUÍ 👇
-}
+  let presentacion = 'Hola, soy ' + nombre + ' y tengo ' + edad + ' años.';
 
+  return presentacion;
+}
+crearSaludo('Agustin', 20)
 /* --------------------------------------------------------------------------
    KATA 5 — El Detective de Tipos
    Recibís un valor desconocido. Retorná su tipo de dato usando typeof.
 -------------------------------------------------------------------------- */
 function detectarTipo(valor) {
   // TU CÓDIGO AQUÍ 👇
-}
+  let tipoDeDato = typeof(valor);
 
+  return tipoDeDato;
+}
+detectarTipo(true)
 /* --------------------------------------------------------------------------
    KATA 6 — Conversión de Tipo
    Recibís un número en formato string (ej: "42").
@@ -53,24 +72,32 @@ function detectarTipo(valor) {
 -------------------------------------------------------------------------- */
 function convertirANumero(str) {
   // TU CÓDIGO AQUÍ 👇
-}
 
+  let conversion = Number(str);
+
+  return conversion;
+}
+convertirANumero('43')
 /* --------------------------------------------------------------------------
    KATA 7 — Longitud del String
    Recibís un string. Retorná su longitud (sin recortar espacios).
 -------------------------------------------------------------------------- */
 function calcularLongitud(str) {
   // TU CÓDIGO AQUÍ 👇
-}
 
+  return str.length;
+}
+calcularLongitud('Hola ')
 /* --------------------------------------------------------------------------
    KATA 8 — Todo en Mayúsculas
    Recibís un string. Retornalo convertido a mayúsculas.
 -------------------------------------------------------------------------- */
 function aMayusculas(str) {
   // TU CÓDIGO AQUÍ 👇
-}
 
+  return str.toUpperCase()
+}
+aMayusculas('Buenas')
 /* --------------------------------------------------------------------------
    KATA 9 — Área del Círculo
    Recibís el radio de un círculo. Calculá y retorná su área.
@@ -79,8 +106,13 @@ function aMayusculas(str) {
 -------------------------------------------------------------------------- */
 function calcularAreaCirculo(radio) {
   // TU CÓDIGO AQUÍ 👇
-}
 
+  let formula = Math.PI * radio * radio
+  let redondeo = Math.round(formula * 100) / 100 
+
+  return redondeo
+}
+calcularAreaCirculo(8.4)
 /* --------------------------------------------------------------------------
    KATA 10 — Verificar NaN
    Recibís un valor. Retorná true si es NaN, false si no lo es.
@@ -88,8 +120,10 @@ function calcularAreaCirculo(radio) {
 -------------------------------------------------------------------------- */
 function verificarNaN(valor) {
   // TU CÓDIGO AQUÍ 👇
-}
 
+  return isNaN(valor)
+}
+verificarNaN(8)
 // 🚨 ¡NO TOCAR ESTA LÍNEA! Necesaria para los tests.
 module.exports = {
   sumar,
