@@ -3,26 +3,82 @@
 //  Tu código va en este archivo.
 //  Leé el README.md para entender los requisitos.
 // ============================================================
+    
+function jugar(eleccionJugador) {
+    let resultado = document.getElementById("eleccionJugador")
+    resultado.textContent = eleccionJugador
 
-// ------------------------------------------------------------
-//  PISTAS INICIALES (borrá los comentarios cuando termines)
-// ------------------------------------------------------------
+    let eleccionMaquina = jugarMaquina()
+    resultadoDeLaRonda(eleccionJugador, eleccionMaquina)
+    
+}
 
-// Las opciones posibles del juego:
-// const opciones = ["piedra", "papel", "tijera"];
+function jugarMaquina() {
+    let opciones = ['🪨', '📄', '✂️'];
+    let eleccionMaquina = opciones[Math.floor(Math.random() * opciones.length)];;
 
-// Función que se llama al clickear un botón (ya está en el HTML):
-// jugar("piedra") / jugar("papel") / jugar("tijera")
+    let resultado = document.getElementById("eleccionPC");
+    resultado.textContent = eleccionMaquina;
 
-// Para mostrar algo en pantalla:
-// document.getElementById("resultado").textContent = "texto";
+    return eleccionMaquina
+}
 
-// Para actualizar el puntaje del jugador:
-// document.getElementById("puntajeJugador").textContent = número;
+let contadorJugador = 0
+let contadorEmpate = 0
+let contadorPC = 0
 
-// Los emojis para mostrar la elección:
-// 🪨 → piedra | 📄 → papel | ✂️ → tijera
+function resultadoDeLaRonda(eleccionJugador, eleccionMaquina) {
+    if(eleccionJugador == '✂️') {
+        if((eleccionMaquina == '🪨')) {
+            document.getElementById('resultado').textContent = 'Perdiste'
+            contadorPC++
+            document.getElementById('puntajePC').textContent = contadorPC
+        }
+        else if ((eleccionMaquina == '📄')) {
+            document.getElementById('resultado').textContent = 'Ganaste'
+            contadorJugador++
+            document.getElementById('puntajeJugador').textContent = contadorJugador
+        }
+        else if ((eleccionMaquina == '✂️')){
+            document.getElementById('resultado').textContent = 'Empate'
+            contadorEmpate++
+            document.getElementById('puntajeEmpate').textContent = contadorEmpate
+        }        
+    }
+    else if (eleccionJugador == '🪨') {
+        if((eleccionMaquina == '📄')) {
+            document.getElementById('resultado').textContent = 'Perdiste'
+            contadorPC++
+            document.getElementById('puntajePC').textContent = contadorPC
+        }
+        else if ((eleccionMaquina == '✂️')) {
+            document.getElementById('resultado').textContent = 'Ganaste'
+            contadorJugador++
+            document.getElementById('puntajeJugador').textContent = contadorJugador
+        }
+        else if ((eleccionMaquina == '🪨')){
+            document.getElementById('resultado').textContent = 'Empate'
+            contadorEmpate++
+            document.getElementById('puntajeEmpate').textContent = contadorEmpate
+        }
+    }
+    else {
+        if((eleccionMaquina == '✂️')) {
+            document.getElementById('resultado').textContent = 'Perdiste'
+            contadorPC++
+            document.getElementById('puntajePC').textContent = contadorPC
+        }
+        else if ((eleccionMaquina == '🪨')) {
+            document.getElementById('resultado').textContent = 'Ganaste'
+            contadorJugador++
+            document.getElementById('puntajeJugador').textContent = contadorJugador
+        }
+        else if ((eleccionMaquina == '📄')){
+            document.getElementById('resultado').textContent = 'Empate'
+            contadorEmpate++
+            document.getElementById('puntajeEmpate').textContent = contadorEmpate
+        }
+    }
+}
 
-// ------------------------------------------------------------
-//  TU CÓDIGO EMPIEZA AQUÍ
-// ------------------------------------------------------------
+
